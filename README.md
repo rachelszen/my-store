@@ -1,8 +1,10 @@
 # Passo a passo
-## criar o aplicativo:
+
+## criar o aplicativo
 usando o create-react-app
 ###	`npx create-react-app my-store`
-## coolocar no git
+
+## colocar no git
 ###	`git init`
 ###	`git status`
 ###	`git add . `
@@ -16,3 +18,15 @@ voltar pro promt de comando:
 e colar em ssh key no github
 ###	`ssh -T git@github.com`
 ###	`git remote add origin <ssh>`
+
+## branch aula 1 (30/08)
+Ensinar para elas o conceito de funções, useState, useEffect
+
+## branch aula 2 (04/09)
+Ensinar para elas react-router, redux
+
+## branch aula 3 (06/09)
+Ensinar para elas firebase
+
+## branch aula 4 (11/09)
+Ensinar para elas Styling 
