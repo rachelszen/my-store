@@ -19,14 +19,17 @@ e colar em ssh key no github
 ###	`ssh -T git@github.com`
 ###	`git remote add origin <ssh>`
 
+Para o react-router-dom:
+###	`yarn add react-router-dom`
+
 ## branch aula 1 (30/08)
-Ensinar para elas o conceito de funções, useState, useEffect
+Ensinar para elas o conceito de funções, useState, useEffect e começar a montar o basico do app
 
 ## branch aula 2 (04/09)
-Ensinar para elas react-router, redux
+Ensinar para elas react-router, redux e continuar o aplicativo
 
 ## branch aula 3 (06/09)
-Ensinar para elas firebase
+Ensinar para elas firebase e deixar a parte do app faltando apenas estilizar
 
 ## branch aula 4 (11/09)
 Ensinar para elas Styling 
