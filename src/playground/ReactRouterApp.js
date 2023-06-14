@@ -21,10 +21,10 @@ const HeaderLayout = () => (
 const PageOne = () => {
     return (
         <div>
-        This is page one
+            This is page one
         </div>
-        )
-    }
+    )
+}
     
 
 const PageEdit = () => {
