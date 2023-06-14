@@ -22,6 +22,10 @@ e colar em ssh key no github
 Para o react-router-dom:
 ###	`yarn add react-router-dom`
 
+Para o redux:
+###	`yarn add @reduxjs/toolkit`
+###	`yarn add react-redux`
+
 ## branch aula 1 (30/08)
 Ensinar para elas o conceito de funções, useState, useEffect e começar a montar o basico do app
 
