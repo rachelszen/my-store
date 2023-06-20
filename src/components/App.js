@@ -1,15 +1,18 @@
 import React from "react";
-import { Header } from "./Header/Header";
+import { Header } from "./header/Header";
 import { createBrowserRouter, RouterProvider, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectAllproducts } from "../slice/ProductsSlice";
-import { PageItems } from "./AllItems/PageItems";
-import { HeaderLayout } from "./Header/HeaderLayout";
-import { ItemDeatil } from "./Details/ItemDetail";
+import { HeaderLayout } from "./header/HeaderLayout";
+import { ItemDeatil } from "./details/ItemDetail";
+import { PageItems } from "./items/PageItems";
 
 const router = createBrowserRouter([
     {
-        element: <HeaderLayout />,
+        element: 
+        <div>
+            <HeaderLayout />
+        </div>,
         children: [
             {path: '/', element: <PageItems/>},
             {path: '/:category', element: <PageItems/>},
@@ -22,7 +25,6 @@ const router = createBrowserRouter([
 export const App = () => {
     return (
         <div>
-            <Header/>
             <RouterProvider router={router}/>
         </div>
     )
