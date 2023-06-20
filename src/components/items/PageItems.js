@@ -11,13 +11,11 @@ export const PageItems = () => {
 
     const products = useSelector((state) => state.products);
     const filters = useSelector((state) => state.filters);
-    const {category} = useParams();
-    setFilterCategory(dispatch, category);
 
     const productsVisible = visibleProducts(products, filters);
     return (
         <div>
-        <select 
+            <select 
                 value={filters.sortBy} 
                 onChange={(e) => {
                     if (e.target.value === 'price'){

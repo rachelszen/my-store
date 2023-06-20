@@ -7,5 +7,6 @@ export const visibleProducts = (products, { text, sortBy, showCategory }) => {
         } else if (sortBy === 'alphabetical'){
             return a.name > b.name ? 1 : -1;
         }
+        return 1
     })
 }

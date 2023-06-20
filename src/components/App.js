@@ -1,11 +1,9 @@
 import React from "react";
-import { Header } from "./header/Header";
-import { createBrowserRouter, RouterProvider, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { selectAllproducts } from "../slice/ProductsSlice";
+import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import { HeaderLayout } from "./header/HeaderLayout";
 import { ItemDeatil } from "./details/ItemDetail";
 import { PageItems } from "./items/PageItems";
+import { Header } from "./header/Header";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +23,7 @@ const router = createBrowserRouter([
 export const App = () => {
     return (
         <div>
+            <Header/>
             <RouterProvider router={router}/>
         </div>
     )

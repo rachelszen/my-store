@@ -93,17 +93,17 @@ const db = getDatabase(app)
 //   price: 98999
 // })
 
-onValue(ref(db, 'products'),
-    (dataSnapshot) => {
- 
-        const products = [];
-        dataSnapshot.forEach((childSnapShot) => {
-          products.push({
-            category: childSnapShot.key,
-            items: childSnapShot.val()
-          })
+onValue(ref(db, 'products/moveis'),
+  (dataSnapshot) => {
+      const products = [];
+      dataSnapshot.forEach((childSnapShot) => {
+        products.push({
+          id: childSnapShot.key,
+          ...childSnapShot.val()
         })
-        products.map((p) => console.log(p.items))
-    }, (error) => {
-        console.log('Error: ', error)
-    })
+      })
+      console.log(products);
+  }, (error) => {
+      console.log('Error: ', error)
+  })
+

@@ -2,7 +2,7 @@ import { showAll, showCategoryCelulares, showCategoryMoveis, showCategoryNecessa
 
 export const setFilterCategory = (dispatch, category) => {
     switch (category){
-        case ('todos'):
+        case (''):
         return dispatch(showAll())
         case ('necessarios'):
         return dispatch(showCategoryNecessarios())
