@@ -1,5 +1,5 @@
 import {initializeApp} from 'firebase/app'
-import {getDatabase, onValue, push, ref, remove, set, update} from 'firebase/database'
+import {DataSnapshot, get, getDatabase, onValue, push, ref, remove, set, update} from 'firebase/database'
 
 const firebaseConfig = {
   apiKey: "AIzaSyA2DjVSLsIZWCkHJ-_dKk73JggxGhL4XJU",
@@ -13,7 +13,7 @@ const firebaseConfig = {
   };
 
 const app = initializeApp(firebaseConfig)
-const db = getDatabase(app)
+export const db = getDatabase(app)
 
 // set(ref(db), {
 //   name: 'Rachel',
@@ -58,52 +58,76 @@ const db = getDatabase(app)
 //     }
 // )
 
-// push(ref(db, 'products/necessarios') ,{
+// push(ref(db, 'products') ,{
+//   category: 'necessarios',
 //   name: 'havaiana',
 //   image: 'https://images-americanas.b2w.io/produtos/3205081262/imagens/chinelo-havaianas-slim-feminina-opcao-de-cores-original/3205081692_1_xlarge.jpg',
 //   description: 'Chinelo Havaianas Slim Feminina Opção de Cores Original Havaianas Slim Feminina. A Havaianas Slim é um clássico dos nossos tempos. Com tiras e solado mais fino, ela conquistou os pés de quem gosta de um visual delicado, sem abrir mã...',
 //   price: 3490
 // })
 
-// push(ref(db, 'products/necessarios') ,{
+// push(ref(db, 'products') ,{
+//   category: 'necessarios',
 //   name: 'Bicicleta De Equilíbrio 4 Rodas',
 //   image: 'https://images-americanas.b2w.io/produtos/6062369575/imagens/bicicleta-de-equilibrio-4-rodas-vermelha-10728-buba/6062369575_1_xlarge.jpg',
 //   description: 'Bicicleta De Equilíbrio 4 Rodas Vermelha 10728 Buba A Bicicleta de Equilíbrio 4 Rodas da Buba estimula o equilíbrio e a coordenação motora do pequeno de forma divertida e segura. é estável, com rodas duplas na frente e atrás. A cria...',
 //   price: 21060
 // })
 
-// push(ref(db, 'products/celular') ,{
+// push(ref(db, 'products') ,{
+//   category: 'celular',
 //   name: 'Smartphone Samsung Galaxy M13',
 //   image: 'https://images-americanas.b2w.io/produtos/01/00/img/5242830/2/5242830242_1SZ.jpg',
 //   description: 'Smartphone Samsung Galaxy M13 128GB 4G Wi-Fi Tela 6.6 Dual Chip 4GB RAM Câmera Tripla + Selfie 8MP - Azul',
 //   price: 99900
 // })
 
-// push(ref(db, 'products/moveis') ,{
+// push(ref(db, 'products') ,{
+//   category: 'moveis',
 //   name: 'Armário de cozinha 12 portas',
 //   image: 'https://images-americanas.b2w.io/produtos/32857830/imagens/armario-de-cozinha-12-portas-1-gaveta-clara-poliman-moveis-branco/32857831_1_xlarge.jpg',
 //   description: 'Que tal mobiliar o coração da casa de um jeito fácil? O armário de cozinha 12 portas 1 gaveta Clara Poliman Móveis é feito para quem quer economizar e deixar o cômodo bonito',
 //   price: 55990
 // })
 
-// push(ref(db, 'products/moveis') ,{
+// push(ref(db, 'products') ,{
+//   category: 'moveis',
 //   name: 'Sofá 3 Lugares Retrátil e Reclinável Cama inBox Compact 1,80m Velusoft Café',
 //   image: 'https://images-americanas.b2w.io/produtos/3072707478/imagens/sofa-3-lugares-retratil-e-reclinavel-cama-inbox-compact-1-80m-velusoft-cafe/3072707486_1_xlarge.jpg',
 //   description: 'Que tal mobiliar o coração da casa de um jeito fácil? O armário de cozinha 12 portas 1 gaveta Clara Poliman Móveis é feito para quem quer economizar e deixar o cômodo bonito',
 //   price: 98999
 // })
 
-onValue(ref(db, 'products/moveis'),
-  (dataSnapshot) => {
-      const products = [];
-      dataSnapshot.forEach((childSnapShot) => {
-        products.push({
-          id: childSnapShot.key,
-          ...childSnapShot.val()
-        })
-      })
-      console.log(products);
-  }, (error) => {
-      console.log('Error: ', error)
-  })
+// onValue(ref(db, 'products'),
+//   (dataSnapshot) => {
+//       const products = [];
+//       dataSnapshot.forEach((childSnapShot) => {
+//         products.push({
+//           id: childSnapShot.key,
+//           ...childSnapShot.val()
+//         })
+//       })
+//       console.log(products);
+//   }, (error) => {
+//       console.log('Error: ', error)
+//   })
+
+// get(ref(db))
+//   .then((dataSnapshot) => console.log(dataSnapshot.val()))
+  
+
+// get(ref(db, 'products'))
+//   .then((snapshot) => {
+//     const products = [];
+//     if (snapshot.exists) {
+//       snapshot.forEach((childSnapShot) => {
+//         products.push({
+//           id: childSnapShot.key,
+//           ...childSnapShot.val()
+//         })
+//       })
+//       console.log(products);
+//     }
+//   })
+//   .catch((error) => console.log(error));
 

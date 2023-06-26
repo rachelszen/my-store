@@ -14,7 +14,7 @@ export const AddProductForm = () => {
     const onSaveProductClicked = () => {
         if (name && price) {
             dispatch(
-                addProduct(name, price)
+                addProduct({name, price})
             )
             setName('')
             setPrice('')
