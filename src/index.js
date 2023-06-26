@@ -3,10 +3,9 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import './components/firebase/firebase'
-import { store } from './playground/store';
-import { ProductsList } from './playground/ProductsList';
-import { AddProductForm } from './playground/AddProductForm';
-import { fetchProducts } from './playground/ProductSlice';
+import { App } from './components/App'
+import { store } from '../src/store/store'
+import { fetchProducts } from './slice/ProductsSlice';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,8 +18,7 @@ store.dispatch(fetchProducts()).then(() => {
   root.render(
     <React.StrictMode>
       <Provider store={store}>  
-        <ProductsList/>
-        <AddProductForm/>
+        <App/>
       </Provider>
     </React.StrictMode>
   );

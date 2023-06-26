@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     text: '',
     sortBy: 'price',
-    showCategory: ''
+    showCategory: '',
+    allCategorys: ['necessarios', 'celular', 'moveis']
 }
 
 export const filtersSlice = createSlice({

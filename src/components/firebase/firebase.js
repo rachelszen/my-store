@@ -59,6 +59,7 @@ export const db = getDatabase(app)
 // )
 
 // push(ref(db, 'products') ,{
+//   qtd: 0,
 //   category: 'necessarios',
 //   name: 'havaiana',
 //   image: 'https://images-americanas.b2w.io/produtos/3205081262/imagens/chinelo-havaianas-slim-feminina-opcao-de-cores-original/3205081692_1_xlarge.jpg',
@@ -67,6 +68,7 @@ export const db = getDatabase(app)
 // })
 
 // push(ref(db, 'products') ,{
+//   qtd: 0,
 //   category: 'necessarios',
 //   name: 'Bicicleta De Equilíbrio 4 Rodas',
 //   image: 'https://images-americanas.b2w.io/produtos/6062369575/imagens/bicicleta-de-equilibrio-4-rodas-vermelha-10728-buba/6062369575_1_xlarge.jpg',
@@ -75,6 +77,7 @@ export const db = getDatabase(app)
 // })
 
 // push(ref(db, 'products') ,{
+//   qtd: 0,
 //   category: 'celular',
 //   name: 'Smartphone Samsung Galaxy M13',
 //   image: 'https://images-americanas.b2w.io/produtos/01/00/img/5242830/2/5242830242_1SZ.jpg',
@@ -83,6 +86,7 @@ export const db = getDatabase(app)
 // })
 
 // push(ref(db, 'products') ,{
+//   qtd: 0,
 //   category: 'moveis',
 //   name: 'Armário de cozinha 12 portas',
 //   image: 'https://images-americanas.b2w.io/produtos/32857830/imagens/armario-de-cozinha-12-portas-1-gaveta-clara-poliman-moveis-branco/32857831_1_xlarge.jpg',
@@ -91,6 +95,7 @@ export const db = getDatabase(app)
 // })
 
 // push(ref(db, 'products') ,{
+//   qtd: 0,
 //   category: 'moveis',
 //   name: 'Sofá 3 Lugares Retrátil e Reclinável Cama inBox Compact 1,80m Velusoft Café',
 //   image: 'https://images-americanas.b2w.io/produtos/3072707478/imagens/sofa-3-lugares-retratil-e-reclinavel-cama-inbox-compact-1-80m-velusoft-cafe/3072707486_1_xlarge.jpg',
