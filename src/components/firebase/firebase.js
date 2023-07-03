@@ -103,6 +103,36 @@ export const db = getDatabase(app)
 //   price: 98999
 // })
 
+// push(ref(db, 'adresses') ,{
+//   rua: 'Travessa 14 do Engenho',
+//   numero: 6,
+//   bairro: 'Jardim São Cristóvão',
+//   cidade: 'São Luís',
+//   estado: 'MA',
+//   CEP:  65055624,
+//   pais: 'Brasil'
+// })
+
+// push(ref(db, 'adresses') ,{
+//   rua: 'Rua Princesa Isabel',
+//   numero: 13,
+//   bairro: 'Lírio do Vale',
+//   cidade: 'Manaus',
+//   estado: 'AM',
+//   CEP:  69038220,
+//   pais: 'Brasil'
+// })
+
+// push(ref(db, 'adresses') ,{
+//   rua: 'Rodovia BA-526',
+//   numero: 659,
+//   bairro: 'CEASA',
+//   cidade: 'Salvador',
+//   estado: 'BA',
+//   CEP:  41404000,
+//   pais: 'Brasil'
+// })
+
 // onValue(ref(db, 'products'),
 //   (dataSnapshot) => {
 //       const products = [];

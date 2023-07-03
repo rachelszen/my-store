@@ -8,12 +8,12 @@ import { sortByAlphabetical, sortByPrice } from "../../slice/FiltersSlice";
 
 export const PageItems = () => {
     const dispatch = useDispatch()
-
     const products = useSelector((state) => state.products);
     const filters = useSelector((state) => state.filters);
     const {category} = useParams();
     setFilterCategory(dispatch, category);
 
+    
     const productsVisible = visibleProducts(products, filters);
     console.log(productsVisible);
     return (

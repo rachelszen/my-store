@@ -6,6 +6,7 @@ import './components/firebase/firebase'
 import { App } from './components/App'
 import { store } from '../src/store/store'
 import { fetchProducts } from './slice/ProductsSlice';
+import { HashRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
