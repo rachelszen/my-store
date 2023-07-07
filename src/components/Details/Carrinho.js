@@ -1,6 +1,10 @@
 import numeral from "numeral";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { TWISTModal } from "../util/TWISTModal";
+import { addAdress, deleteAdress, editAdress } from "../../slice/AdressSlice";
+import { AdressForm } from "../util/AdressForm";
+import { removeCarrinho } from "../../slice/ProductsSlice";
 
 const RadioButton = (props) => {
     const { onChange, label, value } = props;
@@ -18,30 +22,51 @@ const RadioButton = (props) => {
   
 
 export const Carrinho = () => {
+    const [indexSelected, setIndexSelected] = useState(0);
+    const [showModal, setShowModal] = useState(false);
+    const [adressEdit, setAdressEdit] = useState(null)
+
+    const dispatch = useDispatch()
+
     const products = useSelector((state) => state.products);
+    const adresses = useSelector((state) => state.adresses);
     let preco = 0
 
     return (
         <div>
-            <h1>carrinho</h1>
+            <h1>Carrinho</h1>
             <h3>Endereço</h3>
 
-            {products.map((product) => 
-                <RadioButton
-                    key={product.id}
-                    onChange={() => console.log('a')}
-                    value={true}
-                    label={product.name}
-                />
+            {adresses.map((adress, index) => 
+                <div>
+                    <RadioButton
+                        key={adress.id}
+                        onChange={() => setIndexSelected(index)}
+                        value={index === indexSelected}
+                        label={adress.rua + ' ' + adress.numero + ', ' + adress.bairro + ', ' + adress.cidade + ', ' + adress.estado}
+                    />
+                    <button onClick={() => [setShowModal(true), setAdressEdit(adress)]}>editar</button>
+                    <button onClick={() => dispatch(deleteAdress(adress.id))}>excluir</button>
+                </div>
             )}
 
-            <RadioButton
-                onChange={() => console.log('a')}
-                id="1"
-                isSelected={true}
-                label="QuickPay"
-                value="QuickPay"
-            />
+            <button onClick={() => setShowModal(true)}>adicionar novo endereço</button>
+
+            <TWISTModal
+                showModal={showModal}
+            >
+                <div>
+                    <AdressForm
+                        onSubmit={(adress) => {
+                            adressEdit ? dispatch(editAdress({id: adressEdit.id, adress})): dispatch(addAdress(adress))
+                            setShowModal(false)
+                            setAdressEdit(null)
+                        }}
+                        adress={adressEdit}
+                    />
+                    <button onClick={() => [setShowModal(false), setAdressEdit(null)]}>cancelar</button>
+                </div>
+            </TWISTModal>
             
             <h3>Resumo do pedido</h3>
             {products.map((product) => 
@@ -50,7 +75,7 @@ export const Carrinho = () => {
                     <div key={product.id}>
                         <text>{product.qtd} </text>
                         <text>{product.name}</text>
-                        <button>remover</button>
+                        <button onClick={() => dispatch(removeCarrinho(product.id))}>remover</button>
                     </div>
                 )
             )}

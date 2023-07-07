@@ -27,7 +27,6 @@ const router = createBrowserRouter([
 export const App = () => {
     return (
         <div>
-            {console.log(store.getState)}
             <RouterProvider router={router}/>
         </div>
     )

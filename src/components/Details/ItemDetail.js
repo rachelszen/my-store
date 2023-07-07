@@ -3,18 +3,7 @@ import { addQtd, selectAllproducts } from "../../slice/ProductsSlice";
 import { useNavigate, useParams } from "react-router-dom";
 import numeral from "numeral";
 import { useState } from "react";
-// import Modal from 'react-modal'
-
-// const OptionModal = (props) => (
-//     <Modal
-//       isOpen={props.showModal}
-//       onRequestClose={props.handleModal}
-//       contentLabel="Selected Option"
-//     >
-//       <h3 className='modal__title'>Adicionado ao carrinho</h3>
-//       <p className='modal__body'>{props.prod.qtd} {props.prod.name} adicionado ao carrinho!</p>
-//     </Modal>
-//   );
+import { TWISTModal } from "../util/TWISTModal";
 
 export const ItemDetail = () => {
     const navigate = useNavigate();
@@ -54,12 +43,15 @@ export const ItemDetail = () => {
             </select>
             <button onClick={() => handleClickCarrinho()}>Adicionar ao carrinho</button>
             <button onClick={() => handleClickComprar()}>Comprar</button>
-            {
-            //     <OptionModal 
-            //     showModal={showModal}
-            //     prod={prod}
-            // />
-            }
+
+            <TWISTModal 
+                showModal={showModal}
+                prod={prod}
+            >
+                <h3 className='modal__title'>Adicionado ao carrinho</h3>
+                <p className='modal__body'>{prod.qtd} {prod.name} adicionado ao carrinho!</p>
+            </TWISTModal>
+
         </div>
     )
 }

@@ -15,7 +15,7 @@ export const PageItems = () => {
 
     
     const productsVisible = visibleProducts(products, filters);
-    console.log(productsVisible);
+
     return (
         <div>
         <select 

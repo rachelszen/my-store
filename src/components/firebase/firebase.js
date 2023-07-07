@@ -40,13 +40,10 @@ export const db = getDatabase(app)
 //   console.log('Error: ',e)
 // })
 
-// update(ref(db), {
-//   age: 23,
-//   'location/city': 'Sao Paulo'
-// }).then(() => {
-//   console.log('data is updated')
-// }).catch((e) => {
-//   console.log('Error: ',e)
+// update(ref(db, 'adresses/-NZbq1Ty0MuHKxUfz5rM'), {
+//   bairro: 'Carlos Guinle',
+//   cidade: 'Teresopolis',
+//   estado: 'RJ'
 // })
 
 // onValue(ref(db), 

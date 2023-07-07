@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { get, ref, set, update } from 'firebase/database'
+import { get, ref, remove, set, update } from 'firebase/database'
 import { db } from "../components/firebase/firebase";
 
 export const addQtd = createAsyncThunk(
@@ -9,6 +9,14 @@ export const addQtd = createAsyncThunk(
         return {id, qtd}
     }
 );
+
+export const removeCarrinho = createAsyncThunk(
+    'products/removeShop',
+    async (id) => {
+        await set(ref(db, `products/${id}/qtd`), 0)
+        return id
+    }
+)
 
 export const fetchProducts = createAsyncThunk(
     'products/fetchProducts',
@@ -44,6 +52,19 @@ export const productsSlice = createSlice({
                 }
                 else {
                     return product;
+                }
+            })
+        })
+        .addCase(removeCarrinho.fulfilled, (state, action) => {
+            return state.map((product) => {
+                if (product.id === action.payload){
+                    return {
+                        ...product,
+                        qtd: 0
+                    }
+                }
+                else{
+                    return product
                 }
             })
         })

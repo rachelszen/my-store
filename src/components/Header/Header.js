@@ -12,10 +12,6 @@ export const Header = () => {
         <div>
             <h1>TWIST</h1>
             <input type='text' value={filters.text} onChange={(e) => dispatch(setTextFilter(e.target.value))}/>
-            <button>login</button>
-            <Link to="/dashboard" className='header__title'>
-                <h1>Expensify</h1>
-            </Link>
             <button onClick={() => navigate('/carrinho')}>carrinho</button>
         </div>
     )
