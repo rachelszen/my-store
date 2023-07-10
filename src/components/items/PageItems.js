@@ -13,7 +13,6 @@ export const PageItems = () => {
     const {category} = useParams();
     setFilterCategory(dispatch, category);
 
-    
     const productsVisible = visibleProducts(products, filters);
 
     return (

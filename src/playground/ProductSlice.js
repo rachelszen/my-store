@@ -44,13 +44,11 @@ export const productSlice = createSlice({
         editProduct: (state, { payload }) => 
             state.map((product) => {
                 if (product.id === payload.id) {
-                    console.log('achou: ', product.name);
                     return {
                         ...product,
                         ...payload.updates
                     }
                 } else {
-                    console.log(product.name);
                     return product;
                 }
             })
