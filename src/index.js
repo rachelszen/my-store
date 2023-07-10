@@ -6,6 +6,8 @@ import './components/firebase/firebase'
 import { App } from './components/App'
 import { store } from '../src/store/store'
 import { fetchProducts } from './slice/ProductsSlice';
+import { HashRouter } from 'react-router-dom';
+import { fetchAdresses } from './slice/AdressSlice';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,13 +17,15 @@ root.render(
 );
 
 store.dispatch(fetchProducts()).then(() => {
-  root.render(
-    <React.StrictMode>
-      <Provider store={store}>  
-        <App/>
-      </Provider>
-    </React.StrictMode>
-  );
+  store.dispatch(fetchAdresses()).then(() => {
+    root.render(
+      <React.StrictMode>
+        <Provider store={store}>  
+          <App/>
+        </Provider>
+      </React.StrictMode>
+    );
+  })
 })
 
 // If you want to start measuring performance in your app, pass a function

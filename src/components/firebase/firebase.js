@@ -40,13 +40,10 @@ export const db = getDatabase(app)
 //   console.log('Error: ',e)
 // })
 
-// update(ref(db), {
-//   age: 23,
-//   'location/city': 'Sao Paulo'
-// }).then(() => {
-//   console.log('data is updated')
-// }).catch((e) => {
-//   console.log('Error: ',e)
+// update(ref(db, 'adresses/-NZbq1Ty0MuHKxUfz5rM'), {
+//   bairro: 'Carlos Guinle',
+//   cidade: 'Teresopolis',
+//   estado: 'RJ'
 // })
 
 // onValue(ref(db), 
@@ -101,6 +98,36 @@ export const db = getDatabase(app)
 //   image: 'https://images-americanas.b2w.io/produtos/3072707478/imagens/sofa-3-lugares-retratil-e-reclinavel-cama-inbox-compact-1-80m-velusoft-cafe/3072707486_1_xlarge.jpg',
 //   description: 'Que tal mobiliar o coração da casa de um jeito fácil? O armário de cozinha 12 portas 1 gaveta Clara Poliman Móveis é feito para quem quer economizar e deixar o cômodo bonito',
 //   price: 98999
+// })
+
+// push(ref(db, 'adresses') ,{
+//   rua: 'Travessa 14 do Engenho',
+//   numero: 6,
+//   bairro: 'Jardim São Cristóvão',
+//   cidade: 'São Luís',
+//   estado: 'MA',
+//   CEP:  65055624,
+//   pais: 'Brasil'
+// })
+
+// push(ref(db, 'adresses') ,{
+//   rua: 'Rua Princesa Isabel',
+//   numero: 13,
+//   bairro: 'Lírio do Vale',
+//   cidade: 'Manaus',
+//   estado: 'AM',
+//   CEP:  69038220,
+//   pais: 'Brasil'
+// })
+
+// push(ref(db, 'adresses') ,{
+//   rua: 'Rodovia BA-526',
+//   numero: 659,
+//   bairro: 'CEASA',
+//   cidade: 'Salvador',
+//   estado: 'BA',
+//   CEP:  41404000,
+//   pais: 'Brasil'
 // })
 
 // onValue(ref(db, 'products'),

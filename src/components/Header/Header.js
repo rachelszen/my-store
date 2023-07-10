@@ -1,16 +1,18 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setTextFilter } from "../../slice/FiltersSlice";
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
     const filters = useSelector((state) => state.filters);
-    const dispatch = useDispatch()
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     return (
         <div>
             <h1>TWIST</h1>
             <input type='text' value={filters.text} onChange={(e) => dispatch(setTextFilter(e.target.value))}/>
-            <button>login</button>
-            <button>carrinho</button>
+            <button onClick={() => navigate('/carrinho')}>carrinho</button>
         </div>
     )
 }
