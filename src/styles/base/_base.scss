@@ -1,0 +1,16 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0px;
+}
+
+button {
+    border: none;
+    color: white;
+    font-size: $font-size-medium;
+    padding: $s-size;
+    text-decoration: none;
+    border-radius: 1rem;
+    background-color: $pink;
+    cursor: pointer;
+    margin: $s-size 0;
+}

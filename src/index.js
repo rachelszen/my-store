@@ -8,11 +8,12 @@ import { store } from '../src/store/store'
 import { fetchProducts } from './slice/ProductsSlice';
 import { HashRouter } from 'react-router-dom';
 import { fetchAdresses } from './slice/AdressSlice';
+import './styles/styles.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <p>Loading...</p>
+      <h1>Loading...</h1>
   </React.StrictMode>
 );
 

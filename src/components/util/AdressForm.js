@@ -48,40 +48,45 @@ export const AdressForm = (props) => {
     };
 
     return (
-        <form className='add-option' onSubmit={onSubmit}>
+        <form onSubmit={onSubmit}>
             {error && <p className="form__error">{error}</p>}
-            <input 
-                type="text" 
-                placeholder="Rua" 
-                autoFocus 
-                className="text-input"
-                value={rua} 
-                onChange={onRuaChange} />
-            <input 
-                type="text" 
-                placeholder="Número" 
-                className="text-input"
-                value={numero} 
-                onChange={onNumeroChange} />
-            <input 
-                type="text" 
-                placeholder="Bairro" 
-                className="text-input"
-                value={bairro} 
-                onChange={onBairroChange} />
-            <input 
-                type="text" 
-                placeholder="Cidade" 
-                className="text-input"
-                value={cidade} 
-                onChange={onCidadeChange} />
-            <input 
-                type="text" 
-                placeholder="Estado" 
-                className="text-input"
-                value={estado} 
-                onChange={onEstadoChange} />
-            <button className="button">Salvar</button>
+            <h3>Novo endereço</h3>
+
+            <div className='add-address'>
+                <input 
+                    type="text" 
+                    placeholder="Rua" 
+                    autoFocus 
+                    className="text-input"
+                    value={rua} 
+                    onChange={onRuaChange} />
+                <input 
+                    type="text" 
+                    placeholder="Número" 
+                    className="text-input"
+                    value={numero} 
+                    onChange={onNumeroChange} />
+                <input 
+                    type="text" 
+                    placeholder="Bairro" 
+                    className="text-input"
+                    value={bairro} 
+                    onChange={onBairroChange} />
+                <input 
+                    type="text" 
+                    placeholder="Cidade" 
+                    className="text-input"
+                    value={cidade} 
+                    onChange={onCidadeChange} />
+                <input 
+                    type="text" 
+                    placeholder="Estado" 
+                    className="text-input"
+                    value={estado} 
+                    onChange={onEstadoChange} />
+                <button className="button">Salvar</button>
+                <button onClick={()=>console.log('aa')} className="button">Cancelar</button>
+            </div>
         </form>
     )
 }

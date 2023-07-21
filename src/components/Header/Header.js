@@ -9,10 +9,10 @@ export const Header = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     return (
-        <div>
+        <div className="header">
             <h1>TWIST</h1>
-            <input type='text' value={filters.text} onChange={(e) => dispatch(setTextFilter(e.target.value))}/>
-            <button onClick={() => navigate('/carrinho')}>carrinho</button>
+            <input className="header__search" type='text' value={filters.text} onChange={(e) => dispatch(setTextFilter(e.target.value))} placeholder="busque aqui seu produto"/>
+            <img className="header__cart" src="./images/carrinho.png" onClick={() => navigate('/carrinho')}/>
         </div>
     )
 }

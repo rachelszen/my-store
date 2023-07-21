@@ -36,6 +36,7 @@ Para o firebase:
 ###	`yarn add firebase`
 
 ## branch aula 4 (11/09)
+Ensinar estilo 
 Nos permite importar aquivos scss:
 ### `yarn add sass-loader`
 Converte o código scss para css regular:

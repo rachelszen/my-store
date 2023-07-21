@@ -7,15 +7,14 @@ import { AdressForm } from "../util/AdressForm";
 import { removeCarrinho } from "../../slice/ProductsSlice";
 
 const RadioButton = (props) => {
-    const { onChange, label, value } = props;
     return (
         <label>
             <input
-                onChange={onChange}
+                onChange={props.onChange}
                 type="radio"
-                checked={value}
+                checked={props.value}
             />
-            {label}
+            {props.label}
         </label>
     );
   };
@@ -33,24 +32,46 @@ export const Carrinho = () => {
     let preco = 0
 
     return (
-        <div>
+        <div className="carrinho">
             <h1>Carrinho</h1>
-            <h3>Endereço</h3>
 
-            {adresses.map((adress, index) => 
-                <div>
-                    <RadioButton
-                        key={adress.id}
-                        onChange={() => setIndexSelected(index)}
-                        value={index === indexSelected}
-                        label={adress.rua + ' ' + adress.numero + ', ' + adress.bairro + ', ' + adress.cidade + ', ' + adress.estado}
-                    />
-                    <button onClick={() => [setShowModal(true), setAdressEdit(adress)]}>editar</button>
-                    <button onClick={() => dispatch(deleteAdress(adress.id))}>excluir</button>
+            <div className="carrinho-detalhes">
+                <div className="carrinho-address">
+                    <h3>Endereço</h3>
+
+                    {adresses.map((adress, index) => 
+                        <div className="address" key={index}>
+                            <RadioButton
+                                key={adress.id}
+                                onChange={() => setIndexSelected(index)}
+                                value={index === indexSelected}
+                                label={adress.rua + ' ' + adress.numero + ', ' + adress.bairro + ', ' + adress.cidade + ', ' + adress.estado}
+                            />
+                            <img className="carrinho-action" src="./images/edit-icon.png" onClick={() => [setShowModal(true), setAdressEdit(adress)]}/>
+                            <img className="carrinho-action" src="./images/no-icon.png" onClick={() => dispatch(deleteAdress(adress.id))}/>
+                        </div>
+                    )}
+
+                    <button onClick={() => setShowModal(true)}>adicionar novo endereço</button>
                 </div>
-            )}
 
-            <button onClick={() => setShowModal(true)}>adicionar novo endereço</button>
+                <div className="carrinho-resumo">
+                    <h3>Resumo do pedido</h3>
+                    {products.map((product, index) => 
+                        <div key={index}>
+                            {product.qtd > 0 && (
+                                preco += (product.price * product.qtd),
+                                <div className="carrinho-items">
+                                    <p>{product.qtd} </p>
+                                    <p>{product.name}</p>
+                                    <img className="carrinho-action" src="./images/no-icon.png" onClick={() => dispatch(removeCarrinho(product.id))}/>
+                                </div>
+                            )}
+                        </div>
+                    )}
+                    <h3>Total: R{numeral(preco / 100).format('$0,0.00')}</h3>
+                </div>
+            </div>
 
             <TWISTModal
                 showModal={showModal}
@@ -68,18 +89,6 @@ export const Carrinho = () => {
                 </div>
             </TWISTModal>
             
-            <h3>Resumo do pedido</h3>
-            {products.map((product) => 
-                product.qtd > 0 && (
-                    preco += (product.price * product.qtd),
-                    <div key={product.id}>
-                        <text>{product.qtd} </text>
-                        <text>{product.name}</text>
-                        <button onClick={() => dispatch(removeCarrinho(product.id))}>remover</button>
-                    </div>
-                )
-            )}
-            <p>Total: {numeral(preco / 100).format('$0,0.00')}</p>
         </div>
     )
 }

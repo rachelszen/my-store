@@ -1,0 +1,66 @@
+.shop-list {
+    border: 1px solid darken($light-pink, 7%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+    border-radius: 2rem;
+    margin: 3rem auto;
+    padding: 2rem;
+    max-width: $max-width;
+
+    &:hover {
+        background-color: $light-pink;
+    }
+}
+
+.shop-list__img {
+    flex: 0.2;
+    height: 10rem;
+}
+
+.shop-list__name {
+    flex: 1;
+    padding: 0 1rem;
+    color: $dark-pink;
+}
+
+.shop-list__price {
+    color: $dark-pink;
+}
+
+.item-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 3rem auto;
+    max-width: $max-width;
+}
+
+.item-detail__img {
+    flex: 1
+}
+
+.item-detail__description {
+    flex: 1
+}
+
+.item-detail__buy {
+    flex: 1;
+    background-color: $light-pink;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: $s-size;
+    margin: $s-size;
+    height:fit-content;
+}
+
+.button-carrinho {
+    background: $pink ;
+    margin: $s-size 0;
+}
+
+.button-comprar {
+    background: $dark-pink ;
+}

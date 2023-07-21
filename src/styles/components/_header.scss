@@ -1,0 +1,44 @@
+.header {
+    background-color: $pink;
+    color: white;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 2.5rem;
+}
+
+.header__search{
+    width: 80%;
+    font-size: x-large;
+}
+
+.header__cart {
+    cursor: pointer;
+}
+
+.navbar {
+    align-items: center;
+    display: flex;
+    justify-content:stretch;
+}
+
+.navbar__item {
+    text-decoration: none;
+    color: white;
+    background-color: $pink;
+    flex-grow: 1;
+    text-align: center;
+    font-size: x-large;
+
+    &:hover {
+        background-color: $light-pink;
+    }
+}
+
+.navbar__item-clicked {
+    @extend .navbar__item;
+    background-color: white;
+    color: $pink;
+    font-weight: bold;
+    font-size: x-large;
+}

@@ -27,22 +27,28 @@ export const ItemDetail = () => {
     }
 
     return (
-        <div>
-            <img src={prod.image} alt={prod.name} style={{width:180}}/>
-            <h1>{prod.name}</h1>
-            <p>{prod.description}</p>
-            <p>{numeral(prod.price / 100).format('$0,0.00')}</p>
-            <text>quantidade:</text>
-            <select 
-                value={qtd} 
-                onChange={(e) => {
-                    setQtd(e.target.value)
-                }}
-            >
-                {qtdArray.map((qtdNumber) => <option value={qtdNumber}>{qtdNumber}</option>)}
-            </select>
-            <button onClick={() => handleClickCarrinho()}>Adicionar ao carrinho</button>
-            <button onClick={() => handleClickComprar()}>Comprar</button>
+        <div className="item-detail">
+            <img className="item-detail__img" src={prod.image} alt={prod.name} style={{width:180}}/>
+            <div className="item-detail__description">
+                <h1>{prod.name}</h1>
+                <p>{prod.description}</p>
+            </div>
+            <div className="item-detail__buy">
+                <h1>R{numeral(prod.price / 100).format('$0,0.00')}</h1>
+                <div>
+                    <p>quantidade:</p>
+                    <select 
+                        value={qtd} 
+                        onChange={(e) => {
+                            setQtd(e.target.value)
+                        }}
+                    >
+                        {qtdArray.map((qtdNumber, index) => <option key={index} value={qtdNumber}>{qtdNumber}</option>)}
+                    </select>
+                </div>
+                <button className="button-carrinho" onClick={() => handleClickCarrinho()}>Adicionar ao carrinho</button>
+                <button className="button-comprar" onClick={() => handleClickComprar()}>Comprar</button>
+            </div>
 
             <TWISTModal 
                 showModal={showModal}

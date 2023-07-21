@@ -8,10 +8,10 @@ const Navbar = () => {
     const store = useSelector((state) => state.filters);
 
     return (
-      <div>
-        <NavLink to='/' onClick={() => setFilterCategory(dispatch, '')} style={({ isActive }) => isActive ? {fontWeight: "bold"} : undefined}>todos</NavLink>
+      <div className="navbar">
+        <NavLink to='/' onClick={() => setFilterCategory(dispatch, '')} className={({ isActive }) => isActive ? "navbar__item-clicked" : "navbar__item"}>todos</NavLink>
         {store.allCategorys.map((category) => (
-            <NavLink onClick={() => setFilterCategory(dispatch, category)} key={category} to={category} style={({ isActive }) => isActive ? {fontWeight: "bold"} : undefined}>{category}</NavLink>
+            <NavLink onClick={() => setFilterCategory(dispatch, category)} key={category} to={category} className={({ isActive }) => isActive ? "navbar__item-clicked" : "navbar__item"}>{category}</NavLink>
         ))}
       </div>
     );

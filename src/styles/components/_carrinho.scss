@@ -1,0 +1,61 @@
+.carrinho {
+    margin: 3rem auto;
+    max-width: $max-width;
+}
+
+.carrinho-detalhes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.carrinho-address {
+    flex: 2;
+    background-color: $light-pink;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: $s-size;
+    height:fit-content;
+    margin-right: $l-size;
+}
+
+.carrinho-resumo {
+    flex: 1;
+    background-color: $light-pink;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: $s-size;
+    height:fit-content;
+}
+
+.carrinho-action {
+    height: 1.2rem;
+    cursor: pointer;
+    margin: 0 0 0 $s-size;
+}
+
+.address {
+    margin: $s-size 0;
+    font-size: $font-size-small;
+}
+
+.carrinho-items {
+    margin: $s-size 0;
+    font-size: $font-size-small;
+}
+
+
+.text-input {
+    border: 1px solid #cacccd;
+    font-size: $font-size-small;
+    padding: $s-size;
+    margin: $s-size 0;
+}
+
+.add-address {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

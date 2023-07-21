@@ -17,7 +17,8 @@ export const PageItems = () => {
 
     return (
         <div>
-        <select 
+            <p>ordenar por:</p>
+            <select 
                 value={filters.sortBy} 
                 onChange={(e) => {
                     if (e.target.value === 'price'){
@@ -27,12 +28,15 @@ export const PageItems = () => {
                     }
                 }}
             >
-                <option value="price">Price</option>
+                <option value="price">preço</option>
                 <option value="alphabetical">A-Z</option>
             </select>
-            {
-                productsVisible.map((prod, index) => <ShopList key={index} prod={prod}/>)
-            }
-        </div>
+            <div className="aaa">
+                {
+                productsVisible.map((prod, index) => 
+                    <ShopList key={index} prod={prod}/>)
+                }
+                </div>
+            </div>
     )
 }
