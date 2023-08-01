@@ -5,13 +5,17 @@
     justify-content: space-between;
     text-decoration: none;
     border-radius: 2rem;
-    margin: 3rem auto;
     padding: 2rem;
-    max-width: $max-width;
+    margin: 2rem 0rem;
 
     &:hover {
         background-color: $light-pink;
     }
+}
+
+.items{
+    margin: 3rem auto;
+    max-width: $max-width;
 }
 
 .shop-list__img {
@@ -38,11 +42,13 @@
 }
 
 .item-detail__img {
-    flex: 1
+    flex: 1;
+    width: 10px;
 }
 
 .item-detail__description {
-    flex: 1
+    flex: 1;
+    padding: $m-size;
 }
 
 .item-detail__buy {
@@ -53,7 +59,7 @@
     flex-direction: column;
     padding: $s-size;
     margin: $s-size;
-    height:fit-content;
+    height: fit-content;
 }
 
 .button-carrinho {

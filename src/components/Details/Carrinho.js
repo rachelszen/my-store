@@ -62,8 +62,8 @@ export const Carrinho = () => {
                             {product.qtd > 0 && (
                                 preco += (product.price * product.qtd),
                                 <div className="carrinho-items">
-                                    <p>{product.qtd} </p>
-                                    <p>{product.name}</p>
+                                    <p className="carrinho-resumo__pedido">{product.qtd}</p>
+                                    <p className="carrinho-resumo__pedido">{product.name}</p>
                                     <img className="carrinho-action" src="./images/no-icon.png" onClick={() => dispatch(removeCarrinho(product.id))}/>
                                 </div>
                             )}
@@ -78,14 +78,14 @@ export const Carrinho = () => {
             >
                 <div>
                     <AdressForm
-                        onSubmit={(adress) => {
-                            adressEdit ? dispatch(editAdress({id: adressEdit.id, adress})): dispatch(addAdress(adress))
-                            setShowModal(false)
-                            setAdressEdit(null)
+                        onSubmit={() => [setShowModal(false), setAdressEdit(null)]}
+                        onSave={(adress) => {
+                            adressEdit 
+                            ? dispatch(editAdress({id: adressEdit.id, adress}))
+                            : dispatch(addAdress(adress))
                         }}
                         adress={adressEdit}
                     />
-                    <button onClick={() => [setShowModal(false), setAdressEdit(null)]}>cancelar</button>
                 </div>
             </TWISTModal>
             

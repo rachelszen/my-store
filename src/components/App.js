@@ -1,10 +1,10 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider, HashRouter, createHashRouter } from "react-router-dom";
-import { HeaderLayout } from "./header/HeaderLayout";
-import { ItemDetail } from "./details/ItemDetail";
+import { RouterProvider, createHashRouter } from "react-router-dom";
+import { HeaderLayout } from "./Header/HeaderLayout";
+import { ItemDetail } from "./Details/ItemDetail";
 import { PageItems } from "./items/PageItems";
-import { Header } from "./header/Header";
-import { Carrinho } from "./details/Carrinho";
+import { Header } from "./Header/Header";
+import { Carrinho } from "./Details/Carrinho";
 import { store } from "../store/store";
 
 const router = createHashRouter([

@@ -12,12 +12,11 @@ export const PageItems = () => {
     const filters = useSelector((state) => state.filters);
     const {category} = useParams();
     setFilterCategory(dispatch, category);
-
     const productsVisible = visibleProducts(products, filters);
 
     return (
-        <div>
-            <p>ordenar por:</p>
+        <div className="items">
+            ordenar por:
             <select 
                 value={filters.sortBy} 
                 onChange={(e) => {
@@ -31,7 +30,7 @@ export const PageItems = () => {
                 <option value="price">preço</option>
                 <option value="alphabetical">A-Z</option>
             </select>
-            <div className="aaa">
+            <div>
                 {
                 productsVisible.map((prod, index) => 
                     <ShopList key={index} prod={prod}/>)

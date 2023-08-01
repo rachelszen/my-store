@@ -31,9 +31,9 @@
 }
 
 .carrinho-action {
-    height: 1.2rem;
+    height: $s-size;
     cursor: pointer;
-    margin: 0 0 0 $s-size;
+    margin: auto 0 auto $s-size;
 }
 
 .address {
@@ -42,10 +42,13 @@
 }
 
 .carrinho-items {
-    margin: $s-size 0;
     font-size: $font-size-small;
+    display: flex;
 }
 
+.carrinho-resumo__pedido {
+    margin: 0 7px 0 0;
+}
 
 .text-input {
     border: 1px solid #cacccd;

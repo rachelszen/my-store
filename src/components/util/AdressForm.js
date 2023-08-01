@@ -37,18 +37,24 @@ export const AdressForm = (props) => {
         }
     };
 
-    const onSubmit = (e) => {
+    const onSave = (e) => {
         e.preventDefault();
         if (!rua || !numero || !bairro || !cidade || !estado) {
             setError('Por favor, preencha todos os campos');
         } else {
             setError(false);
-            props.onSubmit({rua, numero, bairro, cidade, estado});
+            props.onSave({rua, numero, bairro, cidade, estado});
+            props.onSubmit();
         }
     };
 
+    const onSubmit = (e) => {
+        e.preventDefault();
+        props.onSubmit();
+    };
+
     return (
-        <form onSubmit={onSubmit}>
+        <form>
             {error && <p className="form__error">{error}</p>}
             <h3>Novo endereço</h3>
 
@@ -84,8 +90,8 @@ export const AdressForm = (props) => {
                     className="text-input"
                     value={estado} 
                     onChange={onEstadoChange} />
-                <button className="button">Salvar</button>
-                <button onClick={()=>console.log('aa')} className="button">Cancelar</button>
+                <button onClick={onSave} className="button">Salvar</button>
+                <button onClick={onSubmit} className="button">Cancelar</button>
             </div>
         </form>
     )
