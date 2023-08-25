@@ -10,7 +10,7 @@ usando o create-react-app
 ###	`git add . `
 ###	`git commit -m "initial commit"`
 usando git bash no windows:
-###	`ls -a ~/.ssh`
+###	`ls -a ~/.ssh` , se não funcionar `ssh-keygen -t rsa -b 4096 -C "<email>"`
 ###	`eval "$(ssh-agent -s)"`
 ###	`ssh-add ~/.ssh/id_rsa`
 voltar pro promt de comando:
