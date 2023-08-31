@@ -1,6 +1,11 @@
 # Passo a passo
 
+## Instalações
+
 ## criar repositório no git
+https://nodejs.org/dist/v18.16.1/
+###	`node-v`
+###	`npm install -g yarn`
 
 ## criar o aplicativo
 usando o create-react-app
