@@ -8,9 +8,12 @@ https://nodejs.org/dist/v18.16.1/
 ## criar repositório no git
 criar repositório e dar clone
 
-## criar o aplicativo
-usando o create-react-app
+## aplicativo com react
+criar usando o create-react-app
 ###	`npx create-react-app my-store`
+
+rodar o aplicativo
+###	`yarn start`
 
 ## colocar no git
 usando os comandos estudados
