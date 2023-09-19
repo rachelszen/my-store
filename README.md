@@ -20,7 +20,7 @@ e colar em ssh key no github
 ###	`git remote add origin <ssh>`
 
 Para o react-router-dom:
-###	`yarn add react-router-dom`
+###	`npm install react-router-dom`
 
 Para o redux:
 ###	`npm install @reduxjs/toolkit`
